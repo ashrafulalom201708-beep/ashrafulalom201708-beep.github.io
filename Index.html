@@ -1,1 +1,577 @@
 
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Amar Golpo | বাংলা গল্পের ঘর</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,"Noto Sans Bengali",sans-serif;
+    background:#fbf8f3;
+    color:#241f1b;
+}
+
+header{
+    background:#211a16;
+    color:white;
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#e5b765;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.hero{
+    text-align:center;
+    padding:80px 6%;
+    background:linear-gradient(135deg,#fffaf2,#ead9bd);
+}
+
+.hero small{
+    color:#9b6b36;
+    letter-spacing:3px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:70px;
+    margin:15px 0;
+}
+
+.hero p{
+    max-width:650px;
+    margin:auto;
+    color:#746a61;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.button{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 22px;
+    background:#211a16;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:55px 6%;
+}
+
+.search{
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd2c5;
+    border-radius:12px;
+    font-size:16px;
+    margin:20px 0;
+}
+
+.filters{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.filter{
+    padding:9px 15px;
+    border:1px solid #ddd2c5;
+    background:white;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.filter.active{
+    background:#211a16;
+    color:white;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border:1px solid #eadfd2;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+}
+
+.tag{
+    display:inline-block;
+    background:#f1e5d4;
+    color:#79562e;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+.card h3{
+    font-family:Georgia,serif;
+    font-size:24px;
+}
+
+.card p{
+    color:#746a61;
+    line-height:1.7;
+}
+
+.read{
+    color:#9b6b36;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.reader{
+    display:none;
+    background:white;
+    border-top:1px solid #eee;
+}
+
+.reader.show{
+    display:block;
+}
+
+.story{
+    max-width:750px;
+    margin:auto;
+    padding:50px 6%;
+}
+
+.story h2{
+    font-family:Georgia,serif;
+    font-size:45px;
+}
+
+.story-text{
+    font-family:Georgia,serif;
+    font-size:20px;
+    line-height:2;
+}
+
+.back{
+    background:#211a16;
+    color:white;
+    border:0;
+    padding:12px 18px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.about{
+    background:#211a16;
+    color:white;
+}
+
+.about p{
+    color:#d8cec5;
+    max-width:700px;
+    line-height:1.8;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    color:#746a61;
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    nav a{
+        margin-left:8px;
+        font-size:13px;
+    }
+
+    .story h2{
+        font-size:35px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<header>
+
+<div class="logo">
+Amar <span>Golpo</span>
+</div>
+
+<nav>
+<a href="#stories">গল্প</a>
+<a href="#about">পরিচিতি</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<small>বাংলা গল্পের ঘর</small>
+
+<h1>Amar Golpo</h1>
+
+<p>
+কল্পনা, অনুভূতি আর জীবনের ছোট-বড় গল্প—
+একটি সুন্দর জায়গায়, সবার পড়ার জন্য।
+</p>
+
+<a class="button" href="#stories">
+গল্প পড়া শুরু করুন
+</a>
+
+</section>
+
+
+
+<section id="stories" class="container">
+
+<h2>📚 গল্পসমূহ</h2>
+
+<input
+id="search"
+class="search"
+type="search"
+placeholder="🔎 গল্পের নাম খুঁজুন..."
+>
+
+
+<div class="filters">
+
+<button class="filter active" data-category="all">
+সব
+</button>
+
+<button class="filter" data-category="রোমান্টিক">
+রোমান্টিক
+</button>
+
+<button class="filter" data-category="জীবন">
+জীবন
+</button>
+
+<button class="filter" data-category="রহস্য">
+রহস্য
+</button>
+
+</div>
+
+
+
+<div id="storiesGrid" class="grid">
+
+
+<div class="card"
+data-category="রোমান্টিক"
+data-title="শেষ বিকেলের চিঠি">
+
+<span class="tag">রোমান্টিক</span>
+
+<h3>শেষ বিকেলের চিঠি</h3>
+
+<p>
+পুরোনো একটি চিঠি কীভাবে হারিয়ে যাওয়া
+স্মৃতিকে আবার ফিরিয়ে আনে।
+</p>
+
+<a class="read"
+href="#"
+onclick="openStory(
+'শেষ বিকেলের চিঠি',
+'রোমান্টিক',
+'বিকেলের শেষ আলোটা জানালার কাঁচে এসে পড়েছিল।|খামটি খুলতেই পুরোনো কিছু শব্দ চোখে পড়ল। এত বছর পরও কিছু অনুভূতি সময়ের কাছে হার মানে না।'
+)">
+পড়ুন →
+</a>
+
+</div>
+
+
+
+<div class="card"
+data-category="জীবন"
+data-title="বৃষ্টির শহর">
+
+<span class="tag">জীবন</span>
+
+<h3>বৃষ্টির শহর</h3>
+
+<p>
+বৃষ্টিভেজা শহরের এক সন্ধ্যায় হঠাৎ
+দেখা হয়ে যায় পুরোনো একজনের সঙ্গে।
+</p>
+
+<a class="read"
+href="#"
+onclick="openStory(
+'বৃষ্টির শহর',
+'জীবন',
+'বৃষ্টি নামলেই শহরটা যেন একটু ধীর হয়ে যায়।|মানুষ ছাতা নিয়ে ছুটে চলে, আর কিছু স্মৃতি ফুটপাথের পাশে দাঁড়িয়ে থাকে।'
+)">
+পড়ুন →
+</a>
+
+</div>
+
+
+
+<div class="card"
+data-category="রহস্য"
+data-title="অচেনা পথ">
+
+<span class="tag">রহস্য</span>
+
+<h3>অচেনা পথ</h3>
+
+<p>
+একটি অচেনা রাস্তা, একটি পুরোনো বাড়ি
+এবং একটি রহস্য।
+</p>
+
+<a class="read"
+href="#"
+onclick="openStory(
+'অচেনা পথ',
+'রহস্য',
+'রাত তখন প্রায় বারোটা।|মানচিত্রে রাস্তা থাকার কথা নয়, অথচ সামনে একটি সরু পথ দেখা গেল। পথের শেষে দাঁড়িয়ে থাকা বাড়িটির দরজা খোলা ছিল।'
+)">
+পড়ুন →
+</a>
+
+</div>
+
+
+</div>
+
+<p id="noResult" style="display:none;text-align:center;">
+কোনো গল্প পাওয়া যায়নি।
+</p>
+
+</section>
+
+
+
+<section id="reader" class="reader">
+
+<div class="story">
+
+<button class="back" onclick="closeStory()">
+← সব গল্পে ফিরুন
+</button>
+
+<br><br>
+
+<span id="storyCategory" class="tag"></span>
+
+<h2 id="storyTitle"></h2>
+
+<p>✍️ Amar Golpo</p>
+
+<div id="storyText" class="story-text"></div>
+
+</div>
+
+</section>
+
+
+
+<section id="about" class="about">
+
+<div class="container">
+
+<h2>Amar Golpo সম্পর্কে</h2>
+
+<p>
+Amar Golpo হলো বাংলা গল্পের একটি অনলাইন জায়গা,
+যেখানে লেখকের গল্প সবাই সহজে পড়তে পারবে।
+ভবিষ্যতে এখানে আরও অনেক গল্প প্রকাশ করা হবে।
+</p>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 Amar Golpo
+
+</footer>
+
+
+
+<script>
+
+const search =
+document.getElementById("search");
+
+const cards =
+document.querySelectorAll(".card");
+
+const noResult =
+document.getElementById("noResult");
+
+let selectedCategory = "all";
+
+
+function filterStories(){
+
+    const text =
+    search.value.toLowerCase();
+
+    let count = 0;
+
+    cards.forEach(card => {
+
+        const title =
+        card.dataset.title.toLowerCase();
+
+        const category =
+        card.dataset.category;
+
+        const matchText =
+        title.includes(text);
+
+        const matchCategory =
+        selectedCategory === "all" ||
+        category === selectedCategory;
+
+        if(matchText && matchCategory){
+
+            card.style.display = "block";
+            count++;
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    noResult.style.display =
+    count === 0 ? "block" : "none";
+}
+
+
+search.addEventListener(
+"input",
+filterStories
+);
+
+
+document
+.querySelectorAll(".filter")
+.forEach(button => {
+
+    button.addEventListener("click",function(){
+
+        document
+        .querySelectorAll(".filter")
+        .forEach(x =>
+            x.classList.remove("active")
+        );
+
+        this.classList.add("active");
+
+        selectedCategory =
+        this.dataset.category;
+
+        filterStories();
+
+    });
+
+});
+
+
+
+function openStory(title,category,text){
+
+    document
+    .getElementById("storyTitle")
+    .textContent = title;
+
+    document
+    .getElementById("storyCategory")
+    .textContent = category;
+
+    const paragraphs =
+    text.split("|");
+
+    document
+    .getElementById("storyText")
+    .innerHTML =
+    paragraphs
+    .map(p => "<p>" + p + "</p>")
+    .join("");
+
+    document
+    .getElementById("reader")
+    .classList.add("show");
+
+    document
+    .getElementById("reader")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+function closeStory(){
+
+    document
+    .getElementById("reader")
+    .classList.remove("show");
+
+    document
+    .getElementById("stories")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+</body>
+</html>
